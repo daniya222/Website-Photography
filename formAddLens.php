@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Add Photo</title>
+    <title>Add Lens</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -21,7 +21,12 @@
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 </head>
+<?php
+//start session
 
+
+session_start();
+?>
 <body>
 
     <!-- Navigation -->
@@ -35,7 +40,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html" >Pixelooks</a>
+                <a class="navbar-brand" href="index.html" >Pixelooks Admin</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="myNavbar">
@@ -47,18 +52,21 @@
                         <a href="contact.html">Contact</a>
                     </li>
                     <li>
-                        <a href="photo.html">Photo</a>
+                        <a href="http://localhost/pixelooks/formAddPhoto.php">Photo</a>
                     </li>
                     <li class="dropdown">
                         <a class="dropdown" data-toggle="dropdown" href="#">Product<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                        	<li><a href="camera.html">Camera</a></li>
-                        	<li><a href="lens.html">Lens</a></li>
-                        	<li><a href="servicefull.html">Service</a></li>
+                        	<li><a href="http://localhost/pixelooks/formAddCamera.php">Camera</a></li>
+                        	<li><a href="http://localhost/pixelooks/formAddLens.php">Lens</a></li>
+                        	<li><a href="http://localhost/pixelooks/formAddService.php">Service</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="articlehome.html">Article</a>
+                        <a href="http://localhost/pixelooks/formAddArticle.php">Article</a>
+                    </li>
+					<li>
+                        <a href="http://localhost/pixelooks/logout.php">Log Out</a>
                     </li>
                  </ul>
                   
@@ -74,7 +82,13 @@
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                
+             <?php
+				if(isset($_SESSION['is_logged_in'])){
+
+
+			?>
+				<h2>Welcome, <?php echo $_SESSION['user_data']['adminName']?></h2>
+            </div>
             </div>
         </div>
         <!-- /.row -->
@@ -84,44 +98,76 @@
            <div class="col-lg-4"></div>
             <div class="col-md-4">
                <hr>
-                <h2 align="center"><strong>Add Service</strong></h2><hr><br>
-               
-                <form name="sentMessage" id="contactForm" novalidate>
+                <h2 align="center"><strong>Add Lens</strong></h2><hr><br>
+				<?php		require 'Database.php';
+							require 'lens.php';
+							$database = new Database;
+							$lens = new Lens;
+							$database->query('SELECT * FROM photodb.lens ');
+							$rows = $database->resultSet();
+							//print_r($rows);
+							$error=false;
+							$errorMessage='';
+							$post = filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
+							if($post['add'])//IF PRESS ADD
+							{
+								if (empty($post['productId']) || 
+								empty($post['productName'])||empty($post['brand'])||empty($post['focalLength'])||empty($post['angleOfView'])||empty($post['formatCompability']))
+								{//if empty
+									$error = true;
+									$errorMessage="You need to fill the forms completely";
+								}
+								else
+								{
+									$productId = $post['productId'];
+									$productName = $post['productName'];
+									$brand = $post['brand'];
+									$focalLength = $post['focalLength'];
+									$angleOfView = $post['angleOfView'];
+									$formatCompability = $post['formatCompability'];
+									$lens->add($productId,$productName,$brand,$focalLength,$angleOfView,$formatCompability);
+								}
+								
+								
+							}
+					?>
+			
+                 <form method="post" class="form-container" action="<?php $_SERVER['PHP_SELF'];?>">
                     <div class="control-group form-group">
                         <div class="controls">
-                            <h4>Service ID</h4>
-                            <input type="text" class="form-control" placeholder="Enter service ID">
+                            <h4>Lens ID</h4>
+                            <input name="productId" id="productId" autocomplete="off" type="text" class="form-control" placeholder="Enter product ID">
                             <p class="help-block"></p>
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
-                            <h4>Service Name</h4>
-                            <input type="text" class="form-control" placeholder="Enter service name">
+                            <h4>Lens Name</h4>
+                            <input  autocomplete="off" name="productName" id="productName" type="text" class="form-control" placeholder="Enter product name">
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
-                            <h4>Service Day</h4>
-                            <input type="text" class="form-control" placeholder="Enter day of service">
+                            <h4>Lens Brand</h4>
+                            <input  autocomplete="off" name="brand" id="brand" type="text" class="form-control" placeholder="Enter lens brand">
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
-                            <h4>Number of Photo</h4>
-                            <input type="text" class="form-control" placeholder="Enter no of images">
+                            <h4>Lens Focal Length</h4>
+                            <input  autocomplete="off" name="focalLength" id="focalLength" type="text" class="form-control" placeholder="Enter focal length">
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
-                            <h4>Number Edit Photo</h4>
-                            <input type="text" class="form-control" placeholder="Enter number photo will edit">
+                            <h4>Angel of View</h4>
+                            <input  autocomplete="off" name="angleOfView" id="angleOfView" type="text" class="form-control" placeholder="Enter angel of view">
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
-                            <h4>Number Free Make Up</h4>
-                            <input type="text" class="form-control" placeholder="Enter number people">
+                            <h4>Format Compability</h4>
+                            <input type="text" name="formatCompability" id="formatCompability" class="form-control" placeholder="Enter format compability">
                         </div>
                     </div>
                     <br>
@@ -130,7 +176,7 @@
                     
                     <!-- For success/fail messages -->
                     
-                    <button type="submit" class="btn btn-default btn-primary center-block"><h4>Add Product</h4></button><br>
+                    <input name="add" id="add" type="submit" class="btn btn-default btn-primary center-block" value="Add Product"><br>
                     
                 </form>
             </div>
@@ -166,5 +212,7 @@
 
 
 </body>
-
+<?php
+				}
+?>
 </html>
