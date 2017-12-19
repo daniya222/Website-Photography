@@ -145,3 +145,8 @@ footer {
         height: 70%;
     }
 }
+#warn
+{
+	color:red;
+	text-align:center;
+}

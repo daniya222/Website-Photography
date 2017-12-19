@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin</title>
+    <title>Login Admin</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -22,7 +22,11 @@
     
     <!-- Admin CSS -->
     <link href="css/admin.css" rel="stylesheet" type="text/css">
-
+<?php
+ //start session
+session_start();
+	
+?>
 </head>
 
 <body>
@@ -41,7 +45,7 @@
                 <a class="navbar-brand" href="index.html" >Pixelooks</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="myNavbar">
+             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a href="about.html">About</a>
@@ -49,20 +53,11 @@
                     <li>
                         <a href="contact.html">Contact</a>
                     </li>
-                    <li>
-                        <a href="photo.html">Photo</a>
+                  
+					<li>
+                        <a href="http://localhost/pixelooks/registerAdmin.php">Register</a>
                     </li>
-                    <li class="dropdown">
-                        <a class="dropdown" data-toggle="dropdown" href="#">Product<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                        	<li><a href="camera.html">Camera</a></li>
-                        	<li><a href="lens.html">Lens</a></li>
-                        	<li><a href="servicefull.html">Service</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="articlehome.html">Article</a>
-                    </li>
+					
                  </ul>
                   
             </div>
@@ -79,17 +74,55 @@
         		<div class="col-md-4 col-sm4 col-xs-12"></div>
         		<div class="col-md-4 col-sm4 col-xs-12">
         			<!-- FORM START -->
-        			<form class="form-container">
-        			<h3 align="center">Pixel&#8734;ks</h3><br>
+					
+					<?php	
+					//include Database object and Admin object
+							require 'Database.php';
+							require 'Admin.php';
+							$database = new Database;
+							$admin = new AdminModel;
+							$database->query('SELECT * FROM photodb.admin ');
+							$rows = $database->resultSet();
+							//print_r($rows);
+							$error=false;
+							$errorMessage='';
+							$post = filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
+							if($post['loginAdmin'])
+							{
+								if (empty($post['username']) || empty($post['password']))
+								{//if empty
+									$error = true;
+									$errorMessage="Invalid username or password";
+								}
+								else{
+								
+									$username = $post['username'];
+									$password = md5($post['password']);
+									$admin->login($username,$password);
+								}		
+							}
+							
+					?>
+        			<form method="post" class="form-container" action="<?php $_SERVER['PHP_SELF'];?>">
+        			<h3 align="center">Pixel&#8734;ks Login Admin</h3><br>
         				<div class="form-group">
-        					<h4>Email Address</h4>
-        					<input type="email" class="form-control fa-border" id="exampleEmailInput" placeholder="Enter your email">
+        					<h4>Username</h4>
+        					<input type="text"  autocomplete="off" name="username" class="form-control fa-border" id="username" placeholder="Enter your username">
         				</div>
         				<div class="form-group">
         					<h4>Password</h4>
-        					<input type="password" class="form-control" id="examplePassword" placeholder="Enter your password">
+        					<input type="password"  autocomplete="off" name="password" class="form-control" id="password" placeholder="Enter your password">
         				</div><br>
-        				<button type="submit" class="btn btn-default btn-primary center-block"><h4>Log In</h4></button><br>
+						
+        				<input type="submit" name="loginAdmin" id="loginAdmin"  class="btn btn-primary" value="Log In"><h4></h4></button><br>
+						<?php if ($error==true)
+						{?>
+							<div class="alert alert-danger alert-dismissable">
+							<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+							<strong id="warn" > <?php echo $errorMessage ; ?></strong>
+							</div>
+						<?php 
+						} ?>
         			</form>
         			<!-- FORM END -->
         		</div>
