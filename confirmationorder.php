@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Add Camera</title>
+    <title>Order Confirmation</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -74,75 +74,97 @@
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                
+                <h1 class="page-header">Order
+                    <small>Pixelooks</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a>
+                    </li>
+                    <li><a href="order.html">Order</a></li>
+                    <li class="active">Order Confirmation</li>
+                </ol>
             </div>
         </div>
         <!-- /.row -->
 
         <!-- Content Row -->
+        <hr>
+        <!-- E N D CIRCLE -->
+        <h2 class="text-center">Order Confirmation<small> Pixelooks</small></h2>
+        <hr>
+        <br>
         <div class="row">
-           <div class="col-lg-4"></div>
+            <div class="col-md-2"></div>
             <div class="col-md-4">
-               <hr>
-                <h2 align="center"><strong>Add Camera</strong></h2><hr><br>
-               
-                <form name="sentMessage" id="contactForm" novalidate>
-                    <div class="control-group form-group">
-                        <div class="controls">
-                            <h4>Camera ID</h4>
-                            <input type="text" class="form-control" placeholder="Enter product ID">
-                            <p class="help-block"></p>
-                        </div>
-                    </div>
-                    <div class="control-group form-group">
-                        <div class="controls">
-                            <h4>Camera Name</h4>
-                            <input type="text" class="form-control" placeholder="Enter product name">
-                        </div>
-                    </div>
-                    <div class="control-group form-group">
-                        <div class="controls">
-                            <h4>Camera Brand</h4>
-                            <input type="text" class="form-control" placeholder="Enter camera brand">
-                        </div>
-                    </div>
-                    <div class="control-group form-group">
-                        <div class="controls">
-                            <h4>Value Pixel</h4>
-                            <input type="text" class="form-control" placeholder="Enter value pixel">
-                        </div>
-                    </div>
-                    <div class="control-group form-group">
-                        <div class="controls">
-                            <h4>Shutter Speed</h4>
-                            <input type="text" class="form-control" placeholder="Enter shutter speed">
-                        </div>
-                    </div>
-                    <div class="control-group form-group">
-                        <div class="controls">
-                            <h4>Resolution</h4>
-                            <input type="text" class="form-control" placeholder="Enter resolution">
-                        </div>
-                    </div>
-                    <br>
-                    
-                    
-                    
-                    <!-- For success/fail messages -->
-                    
-                    <button type="submit" class="btn btn-default btn-primary center-block"><h4>Add Product</h4></button><br>
-                    
-                </form>
+            	<div class="control-group form-group">
+                   <div class="controls">
+                      <label>Dear</label>
+                      <input type="text" class="form-control" placeholder="Enter your full name">
+                      <p class="help-block"></p>
+                   </div>
+                </div>
             </div>
-
+            <div class="col-md-4">
+            	<div class="control-group form-group">
+                   <div class="controls">
+                      <label>Order ID</label>
+                      <input type="tel" class="form-control" placeholder="Enter your order ID">
+                      <p class="help-block"></p>
+                   </div>
+                </div>
+            </div>
         </div>
+        <div class="row">
+        	<div class="col-md-2"></div>
+        	<div class="col-md-8">
+        		<div class="control-group form-group">
+        			<div class="controls">
+        				<label>Your Order</label>
+        				<input type="text" class="form-control" placeholder="Enter your email address">
+        			</div>
+        		</div>
+        	</div>
+        </div>
+        <div class="row">
+        	<div class="col-md-2"></div>
+        	<div class="col-md-8">
+        		<div class="control-group form-group">
+        			<div class="controls">
+        				<label>Your Address</label>
+        				<input type="text" class="form-control" placeholder="Enter your address">
+        			</div>
+        		</div>
+        	</div>
+        </div>
+        <div class="row">
+        	<div class="col-md-2"></div>
+        	<div class="col-md-10">
+        		<div class="control-group form-group">
+        			<div class="controls">
+        				<label>TOTAL ORDER:</label>
+        				<h1>Rp. 2000.000,00</h1>
+        			</div>
+        		</div>
+			</div>
+        	
+        	
+        </div>
+        <div class="row">
+        	<div class="col-md-2"></div>
+       		<div class="col-md-3">
+        		<div class="control-group form-group">
+        			<p><a href="selectpaymentFix.html" class="btn btn-primary" role="button">Select Payment</a> </p>
+        		</div>
+        	</div>
+        	<div class="col-md-2"></div>
+		</div>
         <!-- /.row -->
 
         <!-- Contact Form -->
         <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
-        
+       
         <!-- /.row -->
-		<br>
+
         <hr>
 
         <!-- Footer -->

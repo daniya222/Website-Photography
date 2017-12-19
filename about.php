@@ -60,14 +60,6 @@
                     <li>
                         <a href="articlehome.html">Article</a>
                     </li>
-                    <li class="dropdown">
-                        <a class="dropdown" data-toggle="dropdown" href="#">Order<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                        	<li><a href="order.html">Order Product</a></li>
-                        	<li><a href="paymentconfirmation.html">Payment Confirmation</a></li>
-                        	
-                        </ul>
-                    </li>
                  </ul>
                   
             </div>
@@ -97,13 +89,12 @@
         <!-- Intro Content -->
         <div class="row">
             <div class="col-md-6">
-                <img class="img-responsive" src="img/logo/logoputih.jpg" alt="">
+                <img class="img-responsive" src="Image/LogoAbout.jpg" alt="">
             </div>
             <div class="col-md-6">
                 <h2>About Our Company</h2>
-                <br>
-                <p>Pixelooks is a Professional Photography Company driven by the desire to deliver value to its clients. At Pixelooks we go beyond our call to deliver quality and creative images to partnering with our clients to ensure they successfully achieve their set objectives. Our approach to delivering our mandate is tailored to meet the specific needs of our clients according to industry standards.</p>
-<p>At Pixelooks, we understand that the images we create impact directly/indirectly on the way our clients and their brand are perceived.</p>
+                <p>McLonely is a Professional Photography Company driven by the desire to deliver value to its clients. At McLonely we go beyond our call to deliver quality and creative images to partnering with our clients to ensure they successfully achieve their set objectives. Our approach to delivering our mandate is tailored to meet the specific needs of our clients according to industry standards.</p>
+<p>At McLonely, we understand that the images we create impact directly/indirectly on the way our clients and their brand are perceived.</p>
 
             </div>
         </div>

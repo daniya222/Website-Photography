@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<?php
+//start session
+
+
+session_start();
+?>
+
 <html lang="en">
 
 <head>
@@ -9,7 +16,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Add Photo</title>
+    <title>Edit Camera</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -19,12 +26,12 @@
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
+	<!-- SCRIPT -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 </head>
-<?php
-//start session
-session_start()
-?>
+
 <body>
 
     <!-- Navigation -->
@@ -41,7 +48,7 @@ session_start()
                 <a class="navbar-brand" href="index.html" >Pixelooks Admin</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="myNavbar">
+             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a href="about.html">About</a>
@@ -80,7 +87,7 @@ session_start()
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-            <?php
+			<?php
 				if(isset($_SESSION['is_logged_in'])){
 
 
@@ -95,84 +102,82 @@ session_start()
            <div class="col-lg-4"></div>
             <div class="col-md-4">
                <hr>
-                <h2 align="center"><strong>Add Photo</strong></h2><hr><br>
-                <?php		require 'Database.php';
+                <h2 align="center"><strong>Edit Photo</strong></h2><hr><br>
+					<?php	require 'Database.php';
 							require 'photo.php';
 							$database = new Database;
 							$photo = new Photo;
 							$database->query('SELECT * FROM photodb.photo ');
 							$rows = $database->resultSet();
 							//print_r($rows);
-							$error=false;
-							$errorMessage='';
+							
 							$post = filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
-							if(isset($_POST['delete']))
+							
+							$id=$post['edit_id'];
+							
+							$current_id=$photo->getProductId($id);
+							$current_name=$photo->getProductName($id);
+							$current_price=$photo->getPrice($id);
+							$current_theme=$photo->getPhotoTheme($id);
+							$current_file=$photo->getPhotoFile($id);
+							
+							
+							if(isset($_GET['edit']))
 							{
-								$delete_id= $_POST['delete_id'];
-								$photo->erase($delete_id);
-								
+								$current_id=$_GET['edit_id'];
+								$productName = $_GET['productName'];
+								$price = $_GET['price'];
+								$photoTheme= $_GET['photoTheme'];
+								$photoFile = $_GET['photoFile'];
+								$photo>edit($current_id,$productName,$price,$photoTheme,$photoFile);
 							}
 							
-							if($post['add'])//IF PRESS ADD
-							{
-								if (empty($post['productId']) || 
-								empty($post['productName'])||empty($post['price'])||empty($post['photoTheme'])||empty($post['photoFile']))
-								{//if empty
-									$error = true;
-									$errorMessage="You need to fill the forms completely";
-								}
-								else
-								{
-									$productId = $post['productId'];
-									$productName = $post['productName'];
-									$price = $post['price'];
-									$photoTheme = $post['photoTheme'];
-									$photoFile = $post['photoFile'];
-									$photo->add($productId,$productName,$price,$photoTheme,$photoFile);
-								}
-								
-								
-							}
+							
+							
 					?>
-                <form method="post" class="form-container" action="<?php $_SERVER['PHP_SELF'];?>">
+               <form method="get" class="form-container" action="<?php $_SERVER['PHP_SELF'];?>">
                     <div class="control-group form-group">
                         <div class="controls">
-                            <h4>Photo ID</h4>
-                            <input name="productId" id="productId" autocomplete="off" type="text" class="form-control" placeholder="Enter product ID">
-                            <p class="help-block"></p>
+                            <h4>Photo Id</h4>
+							<input type="hidden" name="edit_id" value="<?php echo $current_id;?>">
+							 <p><?php echo $current_id;?></p>
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
                             <h4>Photo Name</h4>
-                            <input name="productName" id="productName" autocomplete="off" type="text" class="form-control" placeholder="Enter product name">
+                            <input  autocomplete="off" name="productName" id="productName" type="text" class="form-control" value="" placeholder="<?php echo $current_name; ?>">
                         </div>
                     </div>
-                    <div class="control-group form-group">
+                   
+					<div class="control-group form-group">
                         <div class="controls">
-                            <h4>Price</h4>
-                            <input name="price" id="price" autocomplete="off" type="text" class="form-control" placeholder="Enter price">
+                            <h4>Price:</h4>
+                            <input  autocomplete="off" name="price" id="price" type="text" class="form-control" value="" placeholder="<?php echo $current_price; ?>">
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
                             <h4>Photo Theme</h4>
-                            <input name="photoTheme" id="photoTheme" autocomplete="off" type="text" class="form-control" placeholder="Enter photo theme">
+                            <input  autocomplete="off" name="photoTheme" name="photoTheme" type="text" class="form-control"  value="" placeholder="<?php echo $current_theme; ?>">
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
                             <h4>Photo File</h4>
-                            <input name="photoFile" id="photoFile" autocomplete="off" type="text" class="form-control" placeholder="Enter photo file">
+                            <input  autocomplete="off" name="photoFile" id="photoFile"type="text" class="form-control" value="" placeholder="<?php echo $current_file; ?>">
                         </div>
                     </div>
-                    <br>
                     
+                    <br>
+                    <div class="form-group">
+							<input type="submit" name="edit" class="btn btn-success btn-lg btn=block" value="Go Edit">
+					</div>
                     
                     
                     <!-- For success/fail messages -->
                     
-                    <input name="add" id="add" type="submit" class="btn btn-default btn-primary center-block" value="Add Product"><br>
+                   
                     
                 </form>
             </div>
@@ -186,46 +191,8 @@ session_start()
         <!-- /.row -->
 		<br>
         <hr>
-			<table class="table table-bordered">
-			<!-- The head -->
-				<thead>
-					<tr>
-						<th>Product Id  </th>
-						<th>Product Name   </th>
-						<th>Price    </th>
-						<th>Photo Theme    </th>
-						<th>Photo File   </th>
-						<th>Edit</th>
-						<th>Delete</th>
-					</tr>
-				</thead>
-				<!-- The body -->
-				
-				 <tbody>
-				 <?php foreach($rows as $row): ?>
-					<tr>
-							<td><?php echo $row['productId']?></td>
-							<td><?php echo $row['productName']?></td>
-							<td><?php echo $row['price']?></td>
-							<td><?php echo $row['photoTheme']?></td>
-							<td><?php echo $row['photoFile']?></td>
-							<td>
-								<form method="post" action="formEditPhoto.php">
-									<input type="hidden" name="edit_id" value="<?php echo $row['productId'];?>">
-									<input class="btn btn-primary" type="submit" name="edit" value="Edit">
-							</td>
-							<td>							
-								</form><form method="post" action="<?php $_SERVER['PHP_SELF']; ?>">
-									<input type="hidden" name="delete_id" value="<?php echo $row['productId'];?>">
-									<input class="btn btn-primary" type="submit" name="delete" value="Delete">					
-								</form>
-							</td>
-						<br/>						
-					</tr>
-				<?php endforeach; ?>
-				</tbody>
-			</table>
-		</div>
+		
+
         <!-- Footer -->
         <footer>
             <div class="row">
@@ -245,9 +212,9 @@ session_start()
     <script src="js/bootstrap.min.js"></script>
 
 
-
-</body>
 <?php
-				}
+}
 ?>
+</body>
+
 </html>

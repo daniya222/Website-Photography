@@ -26,7 +26,10 @@ session_start();
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
+	<!-- SCRIPT -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -100,7 +103,8 @@ session_start();
             <div class="col-md-4">
                <hr>
                 <h2 align="center"><strong>Add Camera</strong></h2><hr><br>
-					<?php	require 'Database.php';
+					<?php	
+							require 'Database.php';
 							require 'camera.php';
 							$database = new Database;
 							$camera = new Camera;
@@ -110,9 +114,17 @@ session_start();
 							$error=false;
 							$errorMessage='';
 							$post = filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
+							if(isset($_POST['delete']))
+							{
+								$delete_id= $_POST['delete_id'];
+								$camera->erase($delete_id);
+								
+							}
+							
+							
 							if($post['add'])//IF PRESS ADD
 							{
-								if (empty($post['productId']) || empty($post['productName'])||empty($post['brand'])||empty($post['valuePixel'])||empty($post['shutterSpeed'])||empty($post['resolution']))
+								if (empty($post['productId']) || empty($post['productName'])|| empty($post['price'])||empty($post['brand'])||empty($post['valuePixel'])||empty($post['shutterSpeed'])||empty($post['resolution']))
 								{//if empty
 									$error = true;
 									$errorMessage="You need to fill the forms completely";
@@ -122,11 +134,12 @@ session_start();
 																			
 									$productId = $post['productId'];
 									$productName = $post['productName'];
+									$price = $post['price'];
 									$brand = $post['brand'];
 									$valuePixel = $post['valuePixel'];
 									$shutterSpeed=$post['shutterSpeed'];
 									$resolution=$post['resolution'];
-									$camera->add($productId,$productName,$brand,$valuePixel,$shutterSpeed,$resolution);
+									$camera->add($productId,$productName,$price,$brand,$valuePixel,$shutterSpeed,$resolution);
 								}
 								
 								
@@ -150,6 +163,12 @@ session_start();
                         <div class="controls">
                             <h4>Camera Brand</h4>
                             <input  autocomplete="off" name="brand" id="brand" type="text" class="form-control" placeholder="Enter camera brand">
+                        </div>
+                    </div>
+					<div class="control-group form-group">
+                        <div class="controls">
+                            <h4>Price</h4>
+                            <input  autocomplete="off" name="price" id="price" type="text" class="form-control" placeholder="Enter price">
                         </div>
                     </div>
                     <div class="control-group form-group">
@@ -176,7 +195,7 @@ session_start();
                     
                     <!-- For success/fail messages -->
                     
-                    <input name="add" id="add" type="submit" class="btn btn-default btn-primary center-block" value="Add Product"></button><br>
+                    <input name="add" id="add" type="submit" class="btn btn-default btn-primary center-block" value="Add Product"><br>
                     
                 </form>
             </div>
@@ -190,6 +209,54 @@ session_start();
         <!-- /.row -->
 		<br>
         <hr>
+		<div >
+		<!-- To Show all record -->
+			<table class="table table-bordered">
+			<!-- The head -->
+				<thead>
+					<tr>
+						<th>Product Id  </th>
+						<th>Product Name   </th>
+						<th>Price  </th>
+						<th>Brand    </th>
+						<th>Value Pixel    </th>
+						<th>Shutter Speed   </th>
+						<th>Resolution</th>
+						<th>Edit</td>
+						<th>Delete</th>
+					</tr>
+				</thead>
+				<!-- The body -->
+				
+				 <tbody>
+				 <?php foreach($rows as $row): ?>
+					<tr>
+							<td><?php echo $row['productId']?></td>
+							<td><?php echo $row['productName']?></td>
+							<td><?php echo $row['price']?></td>
+							<td><?php echo $row['brand']?></td>
+							<td><?php echo $row['valuePixel']?></td>
+							<td><?php echo $row['shutterSpeed']?></td>
+							<td><?php echo $row['resolution']?></td>
+							<td>
+								<form method="post" action="formEditCamera.php">
+									<input type="hidden" name="edit_id" value="<?php echo $row['productId'];?>">
+									<input class="btn btn-primary" type="submit" name="edit" value="Edit">
+								
+								</form>
+							</td>
+							<td>
+								<form method="post" action="<?php $_SERVER['PHP_SELF']; ?>">
+									<input type="hidden" name="delete_id" value="<?php echo $row['productId'];?>">
+									<input class="btn btn-primary" type="submit" name="delete" value="Delete">					
+								</form>
+							</td>
+						<br/>						
+					</tr>
+				<?php endforeach; ?>
+				</tbody>
+			</table>
+		</div>
 
         <!-- Footer -->
         <footer>

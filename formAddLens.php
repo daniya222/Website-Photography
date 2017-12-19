@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -21,12 +22,7 @@
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 </head>
-<?php
-//start session
 
-
-session_start();
-?>
 <body>
 
     <!-- Navigation -->
@@ -103,16 +99,21 @@ session_start();
 							require 'lens.php';
 							$database = new Database;
 							$lens = new Lens;
-							$database->query('SELECT * FROM photodb.lens ');
-							$rows = $database->resultSet();
+							
 							//print_r($rows);
 							$error=false;
 							$errorMessage='';
 							$post = filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
-							if($post['add'])//IF PRESS ADD
+							if(isset($_POST['delete']))
+							{
+								$delete_id= $_POST['delete_id'];
+								$lens->erase($delete_id);
+								
+							}
+							if($post['submit'])//IF PRESS ADD
 							{
 								if (empty($post['productId']) || 
-								empty($post['productName'])||empty($post['brand'])||empty($post['focalLength'])||empty($post['angleOfView'])||empty($post['formatCompability']))
+								empty($post['productName'])||empty($post['price'])||empty($post['brand'])||empty($post['focalLength'])||empty($post['angleOfView'])||empty($post['formatCompability']))
 								{//if empty
 									$error = true;
 									$errorMessage="You need to fill the forms completely";
@@ -121,15 +122,18 @@ session_start();
 								{
 									$productId = $post['productId'];
 									$productName = $post['productName'];
+									$price = $post['price'];
 									$brand = $post['brand'];
 									$focalLength = $post['focalLength'];
 									$angleOfView = $post['angleOfView'];
 									$formatCompability = $post['formatCompability'];
-									$lens->add($productId,$productName,$brand,$focalLength,$angleOfView,$formatCompability);
+									$lens->add($productId,$productName,$price,$brand,$focalLength,$angleOfView,$formatCompability);
 								}
 								
 								
 							}
+							$database->query('SELECT * FROM photodb.lens ');
+							$rows = $database->resultSet();
 					?>
 			
                  <form method="post" class="form-container" action="<?php $_SERVER['PHP_SELF'];?>">
@@ -144,6 +148,12 @@ session_start();
                         <div class="controls">
                             <h4>Lens Name</h4>
                             <input  autocomplete="off" name="productName" id="productName" type="text" class="form-control" placeholder="Enter product name">
+                        </div>
+                    </div>
+					<div class="control-group form-group">
+                        <div class="controls">
+                            <h4>Price</h4>
+                            <input  autocomplete="off" name="price" id="price" type="text" class="form-control" placeholder="Enter price">
                         </div>
                     </div>
                     <div class="control-group form-group">
@@ -171,12 +181,11 @@ session_start();
                         </div>
                     </div>
                     <br>
-                    
-                    
-                    
+                                 
                     <!-- For success/fail messages -->
-                    
-                    <input name="add" id="add" type="submit" class="btn btn-default btn-primary center-block" value="Add Product"><br>
+                     <div class="form-group">
+							<input type="submit" name="submit" class="btn btn-success btn-lg btn=block" value="Add Product">
+					</div>
                     
                 </form>
             </div>
@@ -190,7 +199,54 @@ session_start();
         <!-- /.row -->
 		<br>
         <hr>
-
+		<div >
+		<!-- To Show all record -->
+			<table class="table table-bordered">
+			<!-- The head -->
+				<thead>
+					<tr>
+						<th>Product Id  </th>
+						<th>Product Name   </th>
+						<th>Price</th>
+						<th>Brand    </th>
+						<th>Focal Length    </th>
+						<th>Angle of View   </th>
+						<th>Format Compability</th>
+						<th>Edit</td>
+						<th>Delete</th>
+					</tr>
+				</thead>
+				<!-- The body -->
+				
+				 <tbody>
+				 <?php foreach($rows as $row): ?>
+					<tr>
+							<td><?php echo $row['productId']?></td>
+							<td><?php echo $row['productName']?></td>
+							<td><?php echo $row['price']?></td>
+							<td><?php echo $row['brand']?></td>
+							<td><?php echo $row['focalLength']?></td>
+							<td><?php echo $row['angleOfView']?></td>
+							<td><?php echo $row['formatCompability']?></td>
+							<td>
+								<form method="post" action="formEditLens.php">
+									<input type="hidden" name="edit_id" value="<?php echo $row['productId'];?>">
+									<input class="btn btn-primary" type="submit" name="edit" value="Edit">
+								
+								</form>
+							</td>
+							<td>
+								<form method="post" action="<?php $_SERVER['PHP_SELF']; ?>">
+									<input type="hidden" name="delete_id" value="<?php echo $row['productId'];?>">
+									<input class="btn btn-primary" type="submit" name="delete" value="Delete">					
+								</form>
+							</td>
+						<br/>						
+					</tr>
+				<?php endforeach; ?>
+				</tbody>
+			</table>
+		</div>
         <!-- Footer -->
         <footer>
             <div class="row">

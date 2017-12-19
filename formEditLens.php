@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<?php
+//start session
+
+
+session_start();
+?>
+
 <html lang="en">
 
 <head>
@@ -9,7 +16,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Add Lens</title>
+    <title>Edit Lens</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -19,7 +26,10 @@
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
+	<!-- SCRIPT -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -35,10 +45,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html" >Pixelooks</a>
+                <a class="navbar-brand" href="index.html" >Pixelooks Admin</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="myNavbar">
+             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a href="about.html">About</a>
@@ -47,18 +57,21 @@
                         <a href="contact.html">Contact</a>
                     </li>
                     <li>
-                        <a href="photo.html">Photo</a>
+                        <a href="http://localhost/pixelooks/formAddPhoto.php">Photo</a>
                     </li>
                     <li class="dropdown">
                         <a class="dropdown" data-toggle="dropdown" href="#">Product<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                        	<li><a href="camera.html">Camera</a></li>
-                        	<li><a href="lens.html">Lens</a></li>
-                        	<li><a href="servicefull.html">Service</a></li>
+                        	<li><a href="http://localhost/pixelooks/formAddCamera.php">Camera</a></li>
+                        	<li><a href="http://localhost/pixelooks/formAddLens.php">Lens</a></li>
+                        	<li><a href="http://localhost/pixelooks/formAddService.php">Service</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="articlehome.html">Article</a>
+                        <a href="http://localhost/pixelooks/formAddArticle.php">Article</a>
+                    </li>
+					<li>
+                        <a href="http://localhost/pixelooks/logout.php">Log Out</a>
                     </li>
                  </ul>
                   
@@ -74,7 +87,12 @@
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                
+			<?php
+				if(isset($_SESSION['is_logged_in'])){
+
+
+			?>
+				<h2>Welcome, <?php echo $_SESSION['user_data']['adminName']?></h2>
             </div>
         </div>
         <!-- /.row -->
@@ -84,53 +102,97 @@
            <div class="col-lg-4"></div>
             <div class="col-md-4">
                <hr>
-                <h2 align="center"><strong>Add Lens</strong></h2><hr><br>
-               
-                <form name="sentMessage" id="contactForm" novalidate>
+                <h2 align="center"><strong>Edit Lens</strong></h2><hr><br>
+					<?php	require 'Database.php';
+							require 'lens.php';
+							$database = new Database;
+							$lens = new Lens;
+							$database->query('SELECT * FROM photodb.lens ');
+							$rows = $database->resultSet();
+							//print_r($rows);
+							
+							$post = filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
+							
+							$id=$post['edit_id'];
+							
+							$current_id=$lens->getProductId($id);
+							$current_name=$lens->getProductName($id);
+							$current_price=$lens->getPrice($id);
+							$current_brand=$lens->getBrand($id);
+							$current_focal=$lens->getFocalLength($id);
+							$current_angle=$lens->getAngleOfView($id);
+							$current_format=$lens->getFormatCompability($id);
+							
+							if(isset($_GET['edit']))
+							{
+								$current_id=$_GET['edit_id'];
+								$productName = $_GET['productName'];
+								$price = $_GET['price'];
+								$brand = $_GET['brand'];
+								$focalLength = $_GET['focalLength'];
+								$angleOfView = $_GET['angleOfView'];
+								$formatCompability = $_GET['formatCompability'];
+			
+								$lens->edit($current_id,$productName,$price,$brand,$focalLength,$angleOfView,$formatCompability);
+								
+							}
+							
+							
+							
+					?>
+               <form method="get" class="form-container" action="<?php $_SERVER['PHP_SELF'];?>">
                     <div class="control-group form-group">
                         <div class="controls">
-                            <h4>Lens ID</h4>
-                            <input type="text" class="form-control" placeholder="Enter product ID">
-                            <p class="help-block"></p>
+                            <h4>Lens Id</h4>
+							<input type="hidden" name="edit_id" value="<?php echo $current_id;?>">
+							 <p><?php echo $current_id;?></p>
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
                             <h4>Lens Name</h4>
-                            <input type="text" class="form-control" placeholder="Enter product name">
+                            <input  autocomplete="off" name="productName" id="productName" type="text" class="form-control" value="" placeholder="<?php echo $current_name; ?>">
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
                             <h4>Lens Brand</h4>
-                            <input type="text" class="form-control" placeholder="Enter lens brand">
+                            <input  autocomplete="off" name="brand" id="brand" type="text" class="form-control" value="" placeholder="<?php echo $current_brand; ?>">
+                        </div>
+                    </div>
+					<div class="control-group form-group">
+                        <div class="controls">
+                            <h4>Price:</h4>
+                            <input  autocomplete="off" name="price" id="price" type="text" class="form-control" value="" placeholder="<?php echo $current_price; ?>">
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
-                            <h4>Lens Focal Length</h4>
-                            <input type="text" class="form-control" placeholder="Enter focal length">
+                            <h4>Focal Length</h4>
+                            <input  autocomplete="off" name="focalLength" name="focalLength" type="text" class="form-control"  value="" placeholder="<?php echo $current_focal; ?>">
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
-                            <h4>Angel of View</h4>
-                            <input type="text" class="form-control" placeholder="Enter angel of view">
+                            <h4>Angle Of View</h4>
+                            <input  autocomplete="off" name="angleOfView" id="angleOfView"type="text" class="form-control" value="" placeholder="<?php echo $current_angle; ?>">
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
                             <h4>Format Compability</h4>
-                            <input type="text" class="form-control" placeholder="Enter format compability">
+                            <input autocomplete="off"  type="text" name="formatCompability" id="formatCompability" class="form-control"  value="" placeholder="<?php echo $current_format; ?>">
                         </div>
                     </div>
                     <br>
-                    
+                    <div class="form-group">
+							<input type="submit" name="edit" class="btn btn-success btn-lg btn=block" value="Go Edit">
+					</div>
                     
                     
                     <!-- For success/fail messages -->
                     
-                    <button type="submit" class="btn btn-default btn-primary center-block"><h4>Add Product</h4></button><br>
+                   
                     
                 </form>
             </div>
@@ -144,6 +206,7 @@
         <!-- /.row -->
 		<br>
         <hr>
+		
 
         <!-- Footer -->
         <footer>
@@ -164,7 +227,9 @@
     <script src="js/bootstrap.min.js"></script>
 
 
-
+<?php
+}
+?>
 </body>
 
 </html>
