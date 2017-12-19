@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -24,7 +25,7 @@
 
 <body>
 
-    <!-- Navigation -->
+  <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -35,30 +36,30 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html" >Pixelooks</a>
+                <a class="navbar-brand" href="index.php" >Pixelooks</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="about.html">About</a>
+                        <a href="about.php">About</a>
                     </li>
                     <li>
-                        <a href="contact.html">Contact</a>
+                        <a href="contact.php">Contact</a>
                     </li>
                     <li>
-                        <a href="photo.html">Photo</a>
+                        <a href="photo-list.php">Photo</a>
                     </li>
                     <li class="dropdown">
                         <a class="dropdown" data-toggle="dropdown" href="#">Product<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                        	<li><a href="camera.html">Camera</a></li>
-                        	<li><a href="lens.html">Lens</a></li>
-                        	<li><a href="servicefull.html">Service</a></li>
+                        	<li><a href="camera-list.php">Camera</a></li>
+                        	<li><a href="lens-list.php">Lens</a></li>
+                        	<li><a href="servicefull.php">Service</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="articlehome.html">Article</a>
+                        <a href="articlehome.php">Article</a>
                     </li>
                  </ul>
                   
@@ -78,7 +79,7 @@
                     <small>Pixelooks</small>
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="index.html">Home</a>
+                    <li><a href="index.php">Home</a>
                     </li>
                     <li class="active">Article Pixelooks</li>
                 </ol>
@@ -96,7 +97,7 @@
             <div class="col-md-5">
                 <h3>11 Tips for Beginner Photographers</h3>
                 <p>It’s possible to get very nice photos with an inexpensive point and shoot. See these examples on Flickr.</p>
-                <a class="btn btn-primary" href="article 1.html"><i>View Article</i></a>
+                <a class="btn btn-primary" href="article 1.php"><i>View Article</i></a>
             </div>
         </div>
         <!-- /.row -->
@@ -113,7 +114,7 @@
             <div class="col-md-5">
                 <h3>5 Things to Consider When doing Photography</h3>
                 <p>Photography is one of the hardest things I’ve ever studied — even harder than programming or learning how to write well, if you can believe it.</p>
-                <a class="btn btn-primary" href="article 2.html"><i>View Article</i></a>
+                <a class="btn btn-primary" href="article 2.php"><i>View Article</i></a>
             </div>
         </div>
         <!-- /.row -->
@@ -130,7 +131,7 @@
             <div class="col-md-5">
                 <h3>8 On-Camera Flash Tips: How To Get Better Lighting From Your On-Camera Flashy</h3>
                 <p>You can get great lighting for your portraits with on-camera flash. And there’s no need to purchase expensive attachments to modify your light, because everything you need is already there.</p>
-                <a class="btn btn-primary" href="article 3.html"><i>View Article</i></a>
+                <a class="btn btn-primary" href="article 3.php"><i>View Article</i></a>
             </div>
         </div>
         <!-- /.row -->
@@ -147,7 +148,7 @@
             <div class="col-md-5">
                 <h3>20 Amazing Photography Tips and Techniques</h3>
                 <p>As a photographer, there are few things more satisfying than mastering a new photography technique. Learning new photography techniques can open up new possibilities, provide endless potential for inspiration, and can even help to get you out of a creative rut.</p>
-                <a class="btn btn-primary" href="article 4.html"><i>View Article</i></a>
+                <a class="btn btn-primary" href="article 4.php"><i>View Article</i></a>
             </div>
         </div>
         <!-- /.row -->

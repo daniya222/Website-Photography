@@ -36,25 +36,25 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html" >McLonely Photography</a>
+                <a class="navbar-brand" href="index.php" >McLonely Photography</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="about.html">About</a>
+                        <a href="about.php">About</a>
                     </li>
                     <li>
-                        <a href="contact.html">Contact</a>
+                        <a href="contact.php">Contact</a>
                     </li>
                     <li>
-                        <a href="portfolio-1-col.html">Photo</a>
+                        <a href="portfolio-1-col.php">Photo</a>
                     </li>
                     <li>
-                        <a href="portfolio-2-col.html">Video</a>
+                        <a href="portfolio-2-col.php">Video</a>
                     </li>
                     <li>
-                        <a href="pricing.html">Price</a>
+                        <a href="pricing.php">Price</a>
                     </li>
                  </ul>
                   
@@ -74,7 +74,7 @@
                     <small>Gallery</small>
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="index.html">Home</a>
+                    <li><a href="index.php">Home</a>
                     </li>
                     <li class="active">Video Gallery</li>
                 </ol>

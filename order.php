@@ -135,6 +135,50 @@
         		</div>
         	</div>
         </div>
+		 <div class="row">
+        	<div class="col-md-2"></div>
+        	<div class="col-md-8">
+        		<div class="control-group form-group">
+        			<div class="controls">
+        				<label>Postal Code</label>
+        				<input type="text" class="form-control" placeholder="Enter your postal code">
+        			</div>
+        		</div>
+        	</div>
+        </div>
+		 <div class="row">
+        	<div class="col-md-2"></div>
+        	<div class="col-md-4">
+        		<div class="control-group form-group">
+        			<div class="controls">
+        				<label>Province</label>
+        				<input type="text" class="form-control" placeholder="">
+        			</div>
+        		</div>
+        	</div>
+        </div>
+		 <div class="row">
+        	<div class="col-md-2"></div>
+        	<div class="col-md-4">
+        		<div class="control-group form-group">
+        			<div class="controls">
+        				<label>City</label>
+        				<input type="text" class="form-control" placeholder="">
+        			</div>
+        		</div>
+        	</div>
+        </div>
+		 <div class="row">
+        	<div class="col-md-2"></div>
+        	<div class="col-md-8">
+        		<div class="control-group form-group">
+        			<div class="controls">
+        				<label>Postal Code</label>
+        				<input type="text" class="form-control" placeholder="Enter your postal code">
+        			</div>
+        		</div>
+        	</div>
+        </div>
         <div class="row">
         	<div class="col-md-2"></div>
         	<div class="col-md-5">

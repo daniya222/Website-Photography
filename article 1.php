@@ -41,24 +41,24 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="about.html">About</a>
+                        <a href="about.php">About</a>
                     </li>
                     <li>
-                        <a href="contact.html">Contact</a>
+                        <a href="contact.php">Contact</a>
                     </li>
                     <li>
-                        <a href="photo.html">Photo</a>
+                        <a href="photo-list.php">Photo</a>
                     </li>
                     <li class="dropdown">
                         <a class="dropdown" data-toggle="dropdown" href="#">Product<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                        	<li><a href="camera.html">Camera</a></li>
-                        	<li><a href="lens.html">Lens</a></li>
-                        	<li><a href="servicefull.html">Service</a></li>
+                        	<li><a href="camera.php">Camera</a></li>
+                        	<li><a href="lens-list.php">Lens</a></li>
+                        	<li><a href="servicefull.php">Service</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="articlehome.html">Article</a>
+                        <a href="articlehome.php">Article</a>
                     </li>
                  </ul>
                   
@@ -78,9 +78,9 @@
                     <small>Pixelooks</small>
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="index.html">Home</a>
+                    <li><a href="index.php">Home</a>
                     </li>
-                    <li><a href="articlehome.html">Articles Pixelooks</a></li>
+                    <li><a href="articlehome.php">Articles Pixelooks</a></li>
                     <li class="active">Article</li>
                 </ol>
             </div>
@@ -128,19 +128,19 @@
 			</div>
 		<div class="col-lg-3">
 			<div class="list-group">
-				<a href="article 1.html" class="list-group-item active">
+				<a href="article 1.php" class="list-group-item active">
 					<h4 class="list-group-item-heading">11 Tips for Beginner Photographers</h4>
 					<p class="list-group-item-text">It’s possible to get very nice photos with an inexpensive point and shoot. See these examples on Flickr.</p>
 				</a>
-				<a href="article 2.html" class="list-group-item">
+				<a href="article 2.php" class="list-group-item">
 					<h4 class="list-group-item-heading">5 Things to Consider When doing Photography</h4>
 					<p class="list-group-item-text">Photography is one of the hardest things I’ve ever studied — even harder than programming or learning how to write well, if you can believe it.</p>
 				</a>
-				<a href="article 3.html" class="list-group-item">
+				<a href="article 3.php" class="list-group-item">
 					<h4 class="list-group-item-heading">8 On-Camera Flash Tips: How To Get Better Lighting From Your On-Camera Flashy</h4>
 					<p class="list-group-item-text">You can get great lighting for your portraits with on-camera flash. And there’s no need to purchase expensive attachments to modify your light, because everything you need is already there.</p>
 				</a>
-				<a href="article 4.html" class="list-group-item">
+				<a href="article 4.php" class="list-group-item">
 					<h4 class="list-group-item-heading">20 Amazing Photography Tips and Techniques</h4>
 					<p class="list-group-item-text">As a photographer, there are few things more satisfying than mastering a new photography technique. Learning new photography techniques can open up new possibilities, provide endless potential for inspiration, and can even help to get you out of a creative rut.</p>
 				</a>

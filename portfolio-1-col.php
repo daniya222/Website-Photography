@@ -35,25 +35,25 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html" >McLonely Photography</a>
+                <a class="navbar-brand" href="index.php" >McLonely Photography</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="about.html">About</a>
+                        <a href="about.php">About</a>
                     </li>
                     <li>
-                        <a href="contact.html">Contact</a>
+                        <a href="contact.php">Contact</a>
                     </li>
                     <li>
-                        <a href="portfolio-1-col.html">Photo</a>
+                        <a href="portfolio-1-col.php">Photo</a>
                     </li>
                     <li>
-                        <a href="portfolio-2-col.html">Video</a>
+                        <a href="portfolio-2-col.php">Video</a>
                     </li>
                     <li>
-                        <a href="pricing.html">Price</a>
+                        <a href="pricing.php">Price</a>
                     </li>
                  </ul>
                   
@@ -73,7 +73,7 @@
                     <small>Gallery</small>
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="index.html">Home</a>
+                    <li><a href="index.php">Home</a>
                     </li>
                     <li class="active">Photo Gallery</li>
                 </ol>
@@ -91,7 +91,7 @@
             <div class="col-md-5">
                 <h3>Wildlife Photography</h3>
                 <p>Is a genre of photography concerned with documenting various forms of wildlife in their natural habitat. It is one of the more challenging forms of photography......</p>
-                <a class="btn btn-primary" href="portfolio-item6.html"><i>View Project</i></a>
+                <a class="btn btn-primary" href="portfolio-item6.php"><i>View Project</i></a>
             </div>
         </div>
         <!-- /.row -->
@@ -108,7 +108,7 @@
             <div class="col-md-5">
                 <h3>Ceremony</h3>
                 <p>Is an event where at that time there is a beautiful moment and the moment we can capture it with our camera......</p>
-                <a class="btn btn-primary" href="portfolio-item5.html"><i>View Project</i></a>
+                <a class="btn btn-primary" href="portfolio-item5.php"><i>View Project</i></a>
             </div>
         </div>
         <!-- /.row -->
@@ -125,7 +125,7 @@
             <div class="col-md-5">
                 <h3>Food Photography</h3>
                 <p>Is a still life photography genre used to create attractive still life photographs of food. It is a specialization of commercial photography, the products of which are used in advertisements, magazines, packaging, menus or cookbooks......</p>
-                <a class="btn btn-primary" href="portfolio-item4.html"><i>View Project</i></a>
+                <a class="btn btn-primary" href="portfolio-item4.php"><i>View Project</i></a>
             </div>
         </div>
         <!-- /.row -->
@@ -143,7 +143,7 @@
             <div class="col-md-5">
                 <h3>Human-interest Photography </h3>
                 <p>A person's life that describe the atmosphere / mood and sympathy from the viewer. Human Interest fairly broad in scope but often confounded confused with other categories like Portrait photography......</p>
-                <a class="btn btn-primary" href="portfolio-item3.html"><i>View Project</i></a>
+                <a class="btn btn-primary" href="portfolio-item3.php"><i>View Project</i></a>
             </div>
         </div>
         <!-- /.row -->
@@ -178,7 +178,8 @@
                 <h3>Project six</h3>
                 <h4>Wedding Photography</h4>
                 <p>Is the photography of activities relating to weddings. It encompasses photographs of the couple before marriage (for announcements, portrait displays, or thank you cards) as well......</p>
-                <a class="btn btn-primary" href="portfolio-item.html"><i>View Project</i></a>
+                <a class="btn btn-primary" href="portfolio-item.php"><i>View Project</i></a>
+                <a class="btn btn-primary" href="portfolio-item.php"><i>View Project</i></a>
             </div>
         </div>
         <!-- /.row -->

@@ -35,30 +35,30 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html" >Pixelooks</a>
+                <a class="navbar-brand" href="index.php" >Pixelooks</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="about.html">About</a>
+                        <a href="about.php">About</a>
                     </li>
                     <li>
-                        <a href="contact.html">Contact</a>
+                        <a href="contact.php">Contact</a>
                     </li>
                     <li>
-                        <a href="photo.html">Photo</a>
+                        <a href="photo-list.php">Photo</a>
                     </li>
                     <li class="dropdown">
                         <a class="dropdown" data-toggle="dropdown" href="#">Product<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                        	<li><a href="camera.html">Camera</a></li>
-                        	<li><a href="lens.html">Lens</a></li>
-                        	<li><a href="servicefull.html">Service</a></li>
+                        	<li><a href="camera-list.php">Camera</a></li>
+                        	<li><a href="lens-list.php">Lens</a></li>
+                        	<li><a href="servicefull.php">Service</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="articlehome.html">Article</a>
+                        <a href="articlehome.php">Article</a>
                     </li>
                  </ul>
                   
@@ -78,7 +78,7 @@
                     <small>Pixelooks</small>
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="index.html">Home</a>
+                    <li><a href="index.php">Home</a>
                     </li>
                     <li class="active">Contact</li>
                 </ol>

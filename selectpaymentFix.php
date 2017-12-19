@@ -35,30 +35,30 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html" >Pixelooks</a>
+                <a class="navbar-brand" href="index.php" >Pixelooks</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="about.html">About</a>
+                        <a href="about.php">About</a>
                     </li>
                     <li>
-                        <a href="contact.html">Contact</a>
+                        <a href="contact.php">Contact</a>
                     </li>
                     <li>
-                        <a href="photo.html">Photo</a>
+                        <a href="photo.php">Photo</a>
                     </li>
                     <li class="dropdown">
                         <a class="dropdown" data-toggle="dropdown" href="#">Product<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                        	<li><a href="camera.html">Camera</a></li>
-                        	<li><a href="lens.html">Lens</a></li>
-                        	<li><a href="servicefull.html">Service</a></li>
+                        	<li><a href="camera-list.php">Camera</a></li>
+                        	<li><a href="lens-list.php">Lens</a></li>
+                        	<li><a href="servicefull.php">Service</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="articlehome.html">Article</a>
+                        <a href="articlehome.php">Article</a>
                     </li>
                  </ul>
                   
@@ -78,10 +78,10 @@
                     <small>Pixelooks</small>
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="index.html">Home</a>
+                    <li><a href="index.php">Home</a>
                     </li>
-                    <li><a href="order.html">Order</a></li>
-                    <li><a href="confirmationorder.html">Order Confirmation</a></li>
+                    <li><a href="orderforms">Order</a></li>
+                    <li><a href="confirmationorder.php">Order Confirmation</a></li>
                     <li class="active">Select Payment</li>
                 </ol>
             </div>
@@ -166,7 +166,7 @@
             </div>
             
             <div class="control-group form-group">
-        		<p><a href="paymentconfirmation.html" class="btn btn-primary" role="button">Confirmation Payment</a> </p>
+        		<p><a href="paymentconfirmation.php" class="btn btn-primary" role="button">Confirmation Payment</a> </p>
         	</div>
         </div>
         
