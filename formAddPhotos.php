@@ -63,7 +63,7 @@ session_start()
                         </ul>
                     </li>
                     <li>
-                        <a href="http://localhost/pixelooks/formAddArticle.php">Article</a>
+                        <a href="http://localhost/pixelooks/articlehome.php">Article</a>
                     </li>
                     <li>
                         <a href="http://localhost/pixelooks/logout.php">Log Out</a>
