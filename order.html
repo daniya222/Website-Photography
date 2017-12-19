@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Select Payment</title>
+    <title>Order</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -80,9 +80,7 @@
                 <ol class="breadcrumb">
                     <li><a href="index.html">Home</a>
                     </li>
-                    <li><a href="order.html">Order</a></li>
-                    <li><a href="confirmationorder.html">Order Confirmation</a></li>
-                    <li class="active">Select Payment</li>
+                    <li class="active">Order</li>
                 </ol>
             </div>
         </div>
@@ -91,87 +89,89 @@
         <!-- Content Row -->
         <hr>
         <!-- E N D CIRCLE -->
-        <h2 class="text-center">Select Payment<small> Pixelooks</small></h2>
+        <h2 class="text-center">Order Product<small> Pixelooks</small></h2>
         <hr>
         <br>
-        <div class="col-md-12"><h3 align="center"><strong>Your Payment ID: 00217</strong></h3>
-       		<p align="center">Please input your payment ID on the news transfer collom.</p>
-       		<p align="center">Your order will canceled if you don't finish the payment with the limitation time</p>
-       		<h4 align="center">Order will Canceled in 24 Hours</h4><br>
-       	</div>
-        <div class="row" align="center">
-          
+        <div class="row">
+            <div class="col-md-2"></div>
             <div class="col-md-4">
             	<div class="control-group form-group">
                    <div class="controls">
-                      <h3>BCA</h3><br>
-                      <p>Nomor Rekening: 1420400027</p>
-                      <p>a/n: Putu Cahya Adhi Saputra</p>
-                      <p>Bank Code: 014</p>
+                      <label>Full Name</label>
+                      <input type="text" class="form-control" placeholder="Enter your full name">
+                      <p class="help-block"></p>
                    </div>
                 </div>
             </div>
             <div class="col-md-4">
             	<div class="control-group form-group">
                    <div class="controls">
-                      <h3>BRI</h3><br>
-                      <p>Nomor Rekening: 1420400027</p>
-                      <p>a/n: Putu Cahya Adhi Saputra</p>
-                      <p>Bank Code: 014</p>
-                   </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-            	<div class="control-group form-group">
-                   <div class="controls">
-                      <h3>BNI</h3><br>
-                      <p>Nomor Rekening: 1420400027</p>
-                      <p>a/n: Putu Cahya Adhi Saputra</p>
-                      <p>Bank Code: 014</p>
+                      <label>Phone Number</label>
+                      <input type="tel" class="form-control" placeholder="Enter your phone number">
+                      <p class="help-block"></p>
                    </div>
                 </div>
             </div>
         </div>
-        <div class="row" align="center">
-            
-            <div class="col-md-4">
-            	<div class="control-group form-group">
-                   <div class="controls">
-                      <h3>Permata</h3><br>
-                      <p>Nomor Rekening: 1420400027</p>
-                      <p>a/n: Putu Cahya Adhi Saputra</p>
-                      <p>Bank Code: 014</p>
-                   </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-            	<div class="control-group form-group">
-                   <div class="controls">
-                      <h3>Mandiri</h3><br>
-                      <p>Nomor Rekening: 1420400027</p>
-                      <p>a/n: Putu Cahya Adhi Saputra</p>
-                      <p>Bank Code: 014</p>
-                   </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-            	<div class="control-group form-group">
-                   <div class="controls">
-                      <h3>Commontwelth</h3><br>
-                      <p>Nomor Rekening: 1420400027</p>
-                      <p>a/n: Putu Cahya Adhi Saputra</p>
-                      <p>Bank Code: 014</p>
-                   </div><br>
-                </div>
-            </div>
-            
-            <div class="control-group form-group">
-        		<p><a href="paymentconfirmation.html" class="btn btn-primary" role="button">Confirmation Payment</a> </p>
+        <div class="row">
+        	<div class="col-md-2"></div>
+        	<div class="col-md-8">
+        		<div class="control-group form-group">
+        			<div class="controls">
+        				<label>Email Address</label>
+        				<input type="text" class="form-control" placeholder="Enter your email address">
+        			</div>
+        		</div>
         	</div>
         </div>
-        
-        
-        
+        <div class="row">
+        	<div class="col-md-2"></div>
+        	<div class="col-md-8">
+        		<div class="control-group form-group">
+        			<div class="controls">
+        				<label>Address</label>
+        				<input type="text" class="form-control" placeholder="Enter your address">
+        			</div>
+        		</div>
+        	</div>
+        </div>
+        <div class="row">
+        	<div class="col-md-2"></div>
+        	<div class="col-md-5">
+        		<div class="control-group form-group">
+        			<div class="controls">
+        				<label>Product</label>
+        				<select class="form-control" id="sell">
+        					<option>Photo</option>
+        					<option>Camera</option>
+        					<option>Lens</option>
+        					<option>Service</option>
+        				</select>
+        			</div>
+        		</div>
+        	</div>
+        	<div class="col-md-3">
+        		<div class="control-group form-group">
+        			<div class="controls">
+        				<label>Quantity</label>
+        				<form action="#">
+        				<input class="form-control" type="number" name="quantity" min="1" max="5">
+        					<!--<input class="form-control" type="number" id="myNumber">
+        					<script>
+							function myFunction() {
+								document.getElementById("myNumber").stepUp(5);
+							}
+							</script> -->
+        				</form>
+        			</div>
+        		</div>
+        	</div>
+        	<div class="col-md-2"></div>
+        	<div class="col-md-5"></div>
+        	<div class="col-md-2">
+        		<p><a href="confirmationorder.html" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Order Now!</a> </p>
+        	</div>
+        </div>
         <!-- /.row -->
 
         <!-- Contact Form -->

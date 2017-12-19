@@ -1,5 +1,5 @@
 <?php
-class Photo extends Database{
+class Lens extends Database{
 	protected $productId;
 	protected $productName;
 	protected $price;
@@ -8,7 +8,7 @@ class Photo extends Database{
 	
 	public function add($productId,$productName,$price,$photoTheme,$photoFile)
 	{
-		$this->query('INSERT INTO photodb.photo(productId,productName,price,photoTheme,photoFile) VALUES(:productId,:productName,:price,:photoTheme,:photoFile)');
+		$this->query('INSERT INTO photodb.photo(productId,productName,price,photoTheme,photoFile) VALUES(:productId,:productName,:price,:photoTheme,:photoFile');
 		//binding.them
 		$this->bind(':productId',$productId);
 		$this->bind(':productName',$productName);
@@ -23,7 +23,7 @@ class Photo extends Database{
 		
 		return;
 	}
-		public function erase($productId)
+	public function erase($productId)
 	{
 		$this->query('DELETE FROM photodb.photo WHERE productId = :productId ');
 		$this->bind(':productId',$productId);
@@ -40,9 +40,7 @@ class Photo extends Database{
 		$this->bind(':price', $price);
 		$this->bind(':photoTheme', $photoTheme);
 		$this->bind(':photoFile', $photoFile);
-		
 		$this->execute();
-		
 		header('Location:http://localhost/pixelooks/formAddPhoto.php');
 		return;
 	}
@@ -55,15 +53,6 @@ class Photo extends Database{
 		return $id;
 		
 	}
-	public function getPrice($productId)
-	{
-		$this->query('SELECT * FROM photodb.photo WHERE productId = :productId ');
-		$this->bind(':productId', $productId);
-		$row = $this->single();
-		$price=$row['price'];
-		return $price;
-		
-	}
 	public function getProductName($productId)
 	{
 		$this->query('SELECT * FROM photodb.photo WHERE productId = :productId ');
@@ -73,13 +62,22 @@ class Photo extends Database{
 		return $name;
 		
 	}
+	public function getPrice($productId)
+	{
+		$this->query('SELECT * FROM photodb.photo WHERE productId = :productId ');
+		$this->bind(':productId', $productId);
+		$row = $this->single();
+		$price=$row['price'];
+		return $price;
+		
+	}
 	public function getPhotoTheme($productId)
 	{
 		$this->query('SELECT * FROM photodb.photo WHERE productId = :productId ');
 		$this->bind(':productId', $productId);
 		$row = $this->single();
-		$photoTheme=$row['photoTheme'];
-		return $photoTheme;
+		$theme=$row['photoTheme'];
+		return $theme;
 		
 	}
 	public function getPhotoFile($productId)
@@ -87,9 +85,8 @@ class Photo extends Database{
 		$this->query('SELECT * FROM photodb.photo WHERE productId = :productId ');
 		$this->bind(':productId', $productId);
 		$row = $this->single();
-		$photoFile=$row['photoFile'];
-		return $photoFile;
+		$file=$row['photoFile'];
+		return $file;
 		
 	}
-
 }

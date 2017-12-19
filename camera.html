@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Lens</title>
+    <title>Camera</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -60,6 +60,14 @@
                     <li>
                         <a href="articlehome.html">Article</a>
                     </li>
+                    <li class="dropdown">
+                        <a class="dropdown" data-toggle="dropdown" href="#">Order<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                        	<li><a href="order.html">Order Product</a></li>
+                        	<li><a href="paymentconfirmation.html">Payment Confirmation</a></li>
+                        	
+                        </ul>
+                    </li>
                  </ul>
                   
             </div>
@@ -80,7 +88,7 @@
                 <ol class="breadcrumb">
                     <li><a href="index.html">Home</a>
                     </li>
-                    <li class="active">Lens</li>
+                    <li class="active">Camera</li>
                 </ol>
             </div>
         </div>
@@ -132,44 +140,44 @@
 		  </div>
        <hr>
         <!-- E N D CIRCLE -->
-        <h2 class="text-center">Lens <small>Pixelooks</small></h2>
+        <h2 class="text-center">Camera <small>Pixelooks</small></h2>
         <hr>
 
         <!-- S T A R T		Table Content -->
         <div class="container">
 		  <div class="row text-center">
 			<div class="col-sm-6 col-md-3 col-lg-3 col-xs-12">
-			  <div class="thumbnail"> <img src="img/lens/lens10.jpg" alt="Thumbnail Image 1" class="img-responsive">
+			  <div class="thumbnail"> <img src="img/camera/camera1.jpg" alt="Thumbnail Image 1" class="img-responsive">
 				<div class="caption">
-				  <h4>Canon Lens EF 70-300 mm f4-5.6L IS USM</h4>
-				  <p>Rp. 19,160,000</p>
+				  <h4>Sony Alpha A7 II</h4>
+				  <p>Rp. 19,999,000</p>
 				  <p><a href="#" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Buy</a></p>
 				</div>
 			  </div>
 			</div>
 			<div class="col-sm-6 col-md-3 col-lg-3 col-xs-12">
-			  <div class="thumbnail"> <img src="img/lens/lens12.jpg" alt="Thumbnail Image 1" class="img-responsive">
+			  <div class="thumbnail"> <img src="img/camera/camera2.jpg" alt="Thumbnail Image 1" class="img-responsive">
 				<div class="caption">
-				  <h4>Canon EF-S 55-250mm IS STM Zoom Lens</h4>
-				  <p>Rp. 3,650,000</p>
-				  <p><a href="#" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Buy</a></p>
-				</div>
-			  </div>
-			</div>
-			<div class="col-sm-6 col-md-3 col-lg-3 col-xs-12">
-			  <div class="thumbnail"> <img src="img/lens/lens3.jpg" alt="Thumbnail Image 1" class="img-responsive">
-				<div class="caption">
-				  <h4>Canon Lens EF-M 55-200mm f/4.5-6.3 IS STM</h4>
-				  <p>Rp. 4,700,000</p>
+				  <h4>Sony Alpha 9</h4>
+				  <p>Rp. 62,999,000</p>
 				  <p><a href="#" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Buy</a> </p>
 				</div>
 			  </div>
 			</div>
 			<div class="col-sm-6 col-md-3 col-lg-3 col-xs-12">
-			  <div class="thumbnail"> <img src="img/lens/lens4.jpg" alt="Thumbnail Image 1" class="img-responsive">
+			  <div class="thumbnail"> <img src="img/camera/camera3.jpg" alt="Thumbnail Image 1" class="img-responsive">
 				<div class="caption">
-				  <h4>Canon Lens EF-M 18-55mm f/3.5-5.6 IS STM</h4>
-				  <p>Rp. 3,580,000</p>
+				  <h4>Sony Alpha 6500</h4>
+				  <p>Rp. 18,999,000</p>
+				  <p><a href="#" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Buy</a> </p>
+				</div>
+			  </div>
+			</div>
+			<div class="col-sm-6 col-md-3 col-lg-3 col-xs-12">
+			  <div class="thumbnail"> <img src="img/camera/camera4.jpg" alt="Thumbnail Image 1" class="img-responsive">
+				<div class="caption">
+				  <h4>Sony Alpha 6000</h4>
+				  <p>Rp. 6,499,000</p>
 				  <p><a href="#" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Buy</a> </p>
 				</div>
 			  </div>
@@ -179,37 +187,37 @@
 		  <!-- Section 2 Table -->
 		  <div class="row text-center">
 			<div class="col-sm-6 col-md-3 col-lg-3 col-xs-12">
-			  <div class="thumbnail"> <img src="img/lens/lens5.jpg" alt="Thumbnail Image 1" class="img-responsive">
+			  <div class="thumbnail"> <img src="img/camera/camera5.jpg" alt="Thumbnail Image 1" class="img-responsive">
 				<div class="caption">
-				  <h4>Sony Lens FE 70-200mm F2.8 GM OSS</h4>
-				  <p>Rp. 38,999,000</p>
+				  <h4>Canon EOS 6D Mark II</h4>
+				  <p>Rp. 25,880,000</p>
 				  <p><a href="#" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Buy</a></p>
 				</div>
 			  </div>
 			</div>
 			<div class="col-sm-6 col-md-3 col-lg-3 col-xs-12">
-			  <div class="thumbnail"> <img src="img/lens/lens6.jpg" alt="Thumbnail Image 1" class="img-responsive">
+			  <div class="thumbnail"> <img src="img/camera/camera6.jpg" alt="Thumbnail Image 1" class="img-responsive">
 				<div class="caption">
-				  <h4>Sony Lens Sel FE 24-70mm F2.8 GM</h4>
-				  <p>Rp. 30,999,000</p>
+				  <h4>Canon EOS 80D</h4>
+				  <p>Rp. 13,930,000</p>
 				  <p><a href="#" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Buy</a></p>
 				</div>
 			  </div>
 			</div>
 			<div class="col-sm-6 col-md-3 col-lg-3 col-xs-12">
-			  <div class="thumbnail"> <img src="img/lens/lens7.jpg" alt="Thumbnail Image 1" class="img-responsive">
+			  <div class="thumbnail"> <img src="img/camera/camera7.jpg" alt="Thumbnail Image 1" class="img-responsive">
 				<div class="caption">
-				  <h4>Sony Lens SEL FE 28-70mm F3.5-5.6 OSS</h4>
-				  <p>Rp. 6,841,000</p>
+				  <h4>Canon EOS 5D Mark IV</h4>
+				  <p>Rp. 45,130,000</p>
 				  <p><a href="#" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Buy</a></p>
 				</div>
 			  </div>
 			</div>
 			<div class="col-sm-6 col-md-3 col-lg-3 col-xs-12">
-			  <div class="thumbnail"> <img src="img/lens/lens8.jpg" alt="Thumbnail Image 1" class="img-responsive">
+			  <div class="thumbnail"> <img src="img/camera/camera8.jpg" alt="Thumbnail Image 1" class="img-responsive">
 				<div class="caption">
-				  <h4>Sony Lens FE 50mm F2.8 Macro</h4>
-				  <p>Rp. 7,499,000</p>
+				  <h4>Canon EOS 70D</h4>
+				  <p>Rp. 13,110,000</p>
 				  <p><a href="#" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Buy</a></p>
 				</div>
 			  </div>
@@ -219,38 +227,38 @@
   		<!-- Section 3 Table -->
 		  <div class="row text-center">
 			<div class="col-sm-6 col-md-3 col-lg-3 col-xs-12">
-			  <div class="thumbnail"> <img src="img/lens/lens9.jpg" alt="Thumbnail Image 1" class="img-responsive">
+			  <div class="thumbnail"> <img src="img/camera/camera9.jpg" alt="Thumbnail Image 1" class="img-responsive">
 				<div class="caption">
-				  <h4>Canon Lens EF 16-35mm f/2.8L III USM</h4>
-				  <p>Rp. 31,260,000</p>
+				  <h4>GoPro Hero 6 Black</h4>
+				  <p>Rp. 7,499,000</p>
 				  <p><a href="#" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Buy</a></p>
 				</div>
 			  </div>
 			</div>
 			<div class="col-sm-6 col-md-3 col-lg-3 col-xs-12">
-		  	  <div class="thumbnail"> <img src="img/lens/lens1.jpg" alt="Thumbnail Image 1" class="img-responsive">
+			  <div class="thumbnail"> <img src="img/camera/camera10.jpg" alt="Thumbnail Image 1" class="img-responsive">
 				<div class="caption">
-				  <h4>Canon Fisheye Lens EF 8-15mm f4 L USM</h4>
-				  <p>Rp. 18,550,000</p>
+				  <h4>Fujifilm X-A3</h4>
+				  <p>Rp. 7,499,000</p>
 				  <p><a href="#" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Buy</a></p>
 				</div>
 			  </div>
 			</div>
 			<div class="col-sm-6 col-md-3 col-lg-3 col-xs-12">
-			  <div class="thumbnail"> <img src="img/lens/lens11.jpg" alt="Thumbnail Image 1" class="img-responsive">
+			  <div class="thumbnail"> <img src="img/camera/camera11.jpg" alt="Thumbnail Image 1" class="img-responsive">
 				<div class="caption">
-				  <h4>Canon Lens EF 40mm f2.8 STM</h4>
-				  <p>Rp. 2,700,000</p>
+				  <h4>Panasonic Lumix DMC-GX8</h4>
+				  <p>Rp. 11,999,000</p>
 				  <p><a href="#" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Buy</a></p>
 				</div>
 			  </div>
 			</div>
 			<div class="col-sm-6 col-md-3 col-lg-3 col-xs-12">
-		  	  <div class="thumbnail"> <img src="img/lens/lens2.jpg" alt="Thumbnail Image 1" class="img-responsive">
+			  <div class="thumbnail"> <img src="img/camera/camera12.jpg" alt="Thumbnail Image 1" class="img-responsive">
 				<div class="caption">
-				  <h4>Canon Lens EF 180mm f 3.5 L USM Macro</h4>
-				  <p>Rp. 20,660,000</p>
-				  <p><a href="#" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Buy</a> </p>
+				  <h4>Nikon D750</h4>
+				  <p>Rp. 21,500,000</p>
+				  <p><a href="#" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Buy</a></p>
 				</div>
 			  </div>
 			</div>

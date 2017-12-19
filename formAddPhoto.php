@@ -38,7 +38,7 @@ session_start()
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html" >Pixelooks Admin</a>
+                <a class="navbar-brand" href="index.html" >Pixelooks</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="myNavbar">
@@ -50,21 +50,18 @@ session_start()
                         <a href="contact.html">Contact</a>
                     </li>
                     <li>
-                        <a href="http://localhost/pixelooks/formAddPhoto.php">Photo</a>
+                        <a href="photo.html">Photo</a>
                     </li>
                     <li class="dropdown">
                         <a class="dropdown" data-toggle="dropdown" href="#">Product<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                        	<li><a href="http://localhost/pixelooks/formAddCamera.php">Camera</a></li>
-                        	<li><a href="http://localhost/pixelooks/formAddLens.php">Lens</a></li>
-                        	<li><a href="http://localhost/pixelooks/formAddService.php">Service</a></li>
+                        	<li><a href="camera.html">Camera</a></li>
+                        	<li><a href="lens.html">Lens</a></li>
+                        	<li><a href="servicefull.html">Service</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="http://localhost/pixelooks/formAddArticle.php">Article</a>
-                    </li>
-					<li>
-                        <a href="http://localhost/pixelooks/logout.php">Log Out</a>
+                        <a href="articlehome.html">Article</a>
                     </li>
                  </ul>
                   
@@ -99,20 +96,13 @@ session_start()
                 <?php		require 'Database.php';
 							require 'photo.php';
 							$database = new Database;
-							$photo = new Photo;
+							$photo = new photo;
 							$database->query('SELECT * FROM photodb.photo ');
 							$rows = $database->resultSet();
 							//print_r($rows);
 							$error=false;
 							$errorMessage='';
 							$post = filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
-							if(isset($_POST['delete']))
-							{
-								$delete_id= $_POST['delete_id'];
-								$photo->erase($delete_id);
-								
-							}
-							
 							if($post['add'])//IF PRESS ADD
 							{
 								if (empty($post['productId']) || 
@@ -125,9 +115,9 @@ session_start()
 								{
 									$productId = $post['productId'];
 									$productName = $post['productName'];
-									$price = $post['price'];
-									$photoTheme = $post['photoTheme'];
-									$photoFile = $post['photoFile'];
+									$brand = $post['price'];
+									$focalLength = $post['photoTheme'];
+									$angleOfView = $post['photoFile'];
 									$photo->add($productId,$productName,$price,$photoTheme,$photoFile);
 								}
 								
@@ -178,6 +168,7 @@ session_start()
             </div>
 
         </div>
+        
         <!-- /.row -->
 
         <!-- Contact Form -->
@@ -186,6 +177,8 @@ session_start()
         <!-- /.row -->
 		<br>
         <hr>
+		<div >
+		<!-- To Show all record -->
 			<table class="table table-bordered">
 			<!-- The head -->
 				<thead>
@@ -195,8 +188,7 @@ session_start()
 						<th>Price    </th>
 						<th>Photo Theme    </th>
 						<th>Photo File   </th>
-						<th>Edit</th>
-						<th>Delete</th>
+						<th>Edit/Delete</th>
 					</tr>
 				</thead>
 				<!-- The body -->
@@ -213,8 +205,7 @@ session_start()
 								<form method="post" action="formEditPhoto.php">
 									<input type="hidden" name="edit_id" value="<?php echo $row['productId'];?>">
 									<input class="btn btn-primary" type="submit" name="edit" value="Edit">
-							</td>
-							<td>							
+									
 								</form><form method="post" action="<?php $_SERVER['PHP_SELF']; ?>">
 									<input type="hidden" name="delete_id" value="<?php echo $row['productId'];?>">
 									<input class="btn btn-primary" type="submit" name="delete" value="Delete">					
@@ -226,6 +217,7 @@ session_start()
 				</tbody>
 			</table>
 		</div>
+       
         <!-- Footer -->
         <footer>
             <div class="row">
